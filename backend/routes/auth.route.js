@@ -11,4 +11,6 @@ router.post("/logout", logout)
 
 router.get("/refresh_token", refreshToken)
 
+// router.get("/getProfile")
+
 export default router;

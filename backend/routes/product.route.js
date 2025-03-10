@@ -6,14 +6,14 @@ import { createProduct } from "../controllers/product.controller.js";
 import { deleteProduct } from "../controllers/product.controller.js";
 import { getRecommendedProducts } from "../controllers/product.controller.js";
 import { toggleFeaturedProduct } from "../controllers/product.controller.js";
-import { getProductByCategory } from "../controllers/product.controller.js";
+import { getProductsByCategory } from "../controllers/product.controller.js";
 
 
 const router = express.Router();
 
 router.get("/", protectRoute, adminRoute, getAllProducts);
 router.get("/featured", getFeaturedProducts);
-router.get("/category/:category", getProductByCategory);
+router.get("/category/:category", getProductsByCategory);
 router.get("/recommendation", getRecommendedProducts);
 router.post("/", protectRoute, adminRoute, createProduct);
 router.patch("/:id", protectRoute, adminRoute, toggleFeaturedProduct);
