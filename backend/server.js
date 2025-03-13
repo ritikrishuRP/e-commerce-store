@@ -16,7 +16,7 @@ dotenv.config(); //Allows us to read the content of the dot env file
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-app.use(express.json());  //for parsing application/json
+app.use(express.json({limit: "10mb"}));  //for parsing application/json
 app.use(express.urlencoded({ extended: true })); //for parsing application/x-www-form-urlencoded
 app.use(cookieParser());
 
